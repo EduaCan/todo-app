@@ -1,0 +1,92 @@
+.main {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main_title {
+  margin: unset;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.main_inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.main_inputContainer_input {
+  font-size: 2rem;
+}
+
+.main_list {
+  list-style: none;
+  margin: unset;
+  padding: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50%;
+
+}
+
+.main_list_item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: white;
+    padding: 1rem;
+    background-color: antiquewhite;
+
+    &>span{
+        color: black;
+        font-size: 2rem;
+        white-space: ellipsis;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.main_list_item_buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.main_list_item_buttonContainer_twoButtonsContainer{
+    display: grid;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  min-width: 100%;
+}
+
+.deleteButton{
+    background-color: red;
+}
+
+.editButton{
+    background-color: cyan;
+}
+
+.upButton{
+    align-self: flex-start;
+
+}
+
+.downButton{
+    align-self: flex-end;
+}
