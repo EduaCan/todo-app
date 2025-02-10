@@ -1,0 +1,40 @@
+.main {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main_title {
+  margin: unset;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  min-width: 100%;
+}
+
+.deleteButton{
+    background-color: red;
+}
+
+.editButton{
+    background-color: cyan;
+}
+
+.upButton{
+    align-self: flex-start;
+
+}
+
+.downButton{
+    align-self: flex-end;
+}

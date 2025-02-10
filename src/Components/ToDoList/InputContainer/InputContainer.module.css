@@ -1,0 +1,10 @@
+.main_inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .main_inputContainer_input {
+    font-size: 2rem;
+  }
