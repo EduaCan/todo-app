@@ -12,29 +12,29 @@ const ToDoList = () => {
   const [newTask, setNewTask] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
-const inputContainerProps = {newTask, setNewTask,setTasks, isEditing, setIsEditing, tasks}
-  const taskListItemsProps = 
-    {setIsEditing, setNewTask,setTasks,tasks}
-  
+  const inputContainerProps = { newTask, setNewTask, setTasks, isEditing, setIsEditing, tasks }
+  const taskListItemsProps =
+    { setIsEditing, setNewTask, setTasks, tasks }
+
+  const onSubmit = (event) => {
+    typeof isEditing === "boolean" && isEditing === false
+      ? addTask(event, setTasks, setNewTask, newTask)
+      :
+      editTask(
+        event,
+        isEditing,
+        tasks,
+        newTask,
+        setNewTask,
+        setTasks,
+        setIsEditing
+      )
+  }
+
   return (
     <div className={styles.main}>
       <h1 className={styles.main_title}>To-Do List</h1>
-      <form
-        onSubmit={
-          typeof isEditing === "boolean" && isEditing === false
-            ? (event) => addTask(event, setTasks, setNewTask, newTask)
-            : (event) =>
-                editTask(
-                  event,
-                  isEditing,
-                  tasks,
-                  newTask,
-                  setNewTask,
-                  setTasks,
-                  setIsEditing
-                )
-        }
-      >
+      <form onSubmit={onSubmit}      >
         <InputContainer {...inputContainerProps} />
       </form>
       <ul className={styles.main_list}>
