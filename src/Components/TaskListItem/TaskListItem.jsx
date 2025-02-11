@@ -1,11 +1,14 @@
 import styles from "./TaskListItem.module.css"
-import mainStyles from "../ToDoList.module.css"
+import mainStyles from "../ToDoList/ToDoList.module.css"
 
-import deleteTask from "../Functions/deleteTask";
-import moveTaskDown from "../Functions/moveTaskDown";
-import moveTaskUp from "../Functions/moveTaskDown";
+import deleteTask from "../../Functions/deleteTask";
+import moveTaskDown from "../../Functions/moveTaskDown";
+import moveTaskUp from "../../Functions/moveTaskUp";
 
-const TaskListItem =({setIsEditing, setNewTask,setTasks, tasks,   index})=>{
+const TaskListItem =({setIsEditing, setNewTask,setTasks, tasks, index})=>{
+
+  const isFirstElement = index === 0;
+  const isLastElement = index === tasks.length - 1;
 
     
     return(
@@ -25,25 +28,25 @@ const TaskListItem =({setIsEditing, setNewTask,setTasks, tasks,   index})=>{
           </button>
           <button
             className={`${mainStyles.button} ${mainStyles.deleteButton}`}
-            onClick={() => deleteTask(index, setTasks)}
+            onClick={() => deleteTask({index, setTasks})}
           >
             delete
           </button>
         </div>
           <div className={styles.main_list_item_buttonContainer_twoButtonsContainer}>
 
-          {index !== 0 && (
+          {!isFirstElement && (
             <button
               className={`${mainStyles.button} ${mainStyles.upButton}`}
-              onClick={() => moveTaskUp(index, tasks, setTasks)}
+              onClick={() => moveTaskUp({index, tasks, setTasks})}
             >
               UP
             </button>
           )}
-          {index !== tasks.length - 1 && (
+          {!isLastElement && (
             <button
               className={`${mainStyles.button} ${mainStyles.downButton}`}
-              onClick={() => moveTaskDown(index, tasks, setTasks)}
+              onClick={() => moveTaskDown({index, tasks, setTasks})}
             >
               DOWN
             </button>

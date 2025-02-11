@@ -1,0 +1,29 @@
+.main_list_item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: white;
+    padding: 1rem;
+    background-color: antiquewhite;
+
+    &>span {
+        color: black;
+        font-size: 2rem;
+        white-space: ellipsis;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.main_list_item_buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.main_list_item_buttonContainer_twoButtonsContainer {
+    display: grid;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
