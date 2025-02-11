@@ -4,9 +4,9 @@ import onSubmit from "../../Functions/onSubmit";
 import styles from "./InputContainer.module.css";
 import mainStyles from "../ToDoList/ToDoList.module.css";
 
-const InputContainer = ({ newTask, setNewTask, setTasks, isEditing, setIsEditing, tasks }) => {
+const InputContainer = (props) => {
 
-  const onSubmitProps = { isEditing, tasks, newTask, setNewTask, setTasks, setIsEditing }
+  const { newTask, setNewTask, isEditing } = props
 
   return (
     <div className={styles.main_inputContainer}>
@@ -20,7 +20,7 @@ const InputContainer = ({ newTask, setNewTask, setTasks, isEditing, setIsEditing
       <button
         type="submit"
         className={mainStyles.button}
-        onClick={(event) => onSubmit({ ...onSubmitProps, event })}
+        onClick={(event) => onSubmit({ ...props, event })}
       >
         {isEditing === false ? "Set Task" : "Edit task"}
       </button>

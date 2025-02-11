@@ -12,10 +12,12 @@ const ToDoList = () => {
   const [newTask, setNewTask] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
-  const inputContainerProps = { newTask, setNewTask, setTasks, isEditing, setIsEditing, tasks }
+  const inputContainerProps =
+    { newTask, setNewTask, tasks, setTasks, isEditing, setIsEditing }
   const taskListItemsProps =
-    { setIsEditing, setNewTask, setTasks, tasks }
-  const onSubmitProps = { isEditing, tasks, newTask, setNewTask, setTasks, setIsEditing }
+    { setNewTask, setTasks, tasks, setIsEditing }
+  const onSubmitProps =
+    { newTask, setNewTask, tasks, setTasks, isEditing, setIsEditing }
 
   return (
     <div className={styles.main}>

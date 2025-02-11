@@ -5,7 +5,8 @@ import deleteTask from "../../Functions/deleteTask";
 import moveTaskDown from "../../Functions/moveTaskDown";
 import moveTaskUp from "../../Functions/moveTaskUp";
 
-const TaskListItem =({setIsEditing, setNewTask,setTasks, tasks, index})=>{
+const TaskListItem = (props) => {
+  const { setIsEditing, setNewTask, setTasks, tasks, index } = props;
 
   const isFirstElement = index === 0;
   const isLastElement = index === tasks.length - 1;
